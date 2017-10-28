@@ -1,0 +1,44 @@
+Inside forms you will find the .frm files
+You can open them using Notepad++ or VB6
+YOU ONLY NEED TO MODIFY THE BELOW
+Code Explaination :-
+----------------------------------------------------------------------------------------
+question.Caption = "Which company creates the PlayStation line of consoles ?" //question
+option1.Caption = "Sony" //options
+option2.Caption = "Microsoft"
+option3.Caption = "Sega"
+option4.Caption = "Nintendo"
+----------------------------------------------------------------------------------------
+FOR THE CORRECT OPTION GO(IN THIS CASE OPTION1) GO TO THE CLICK() FUNCTION AND ADD THIS CODE
+
+option1.BackColor = RGB(0, 256, 0)//highlights it in green if selected(REPLACE OPTION1 WITH CORRECT OPTION)
+option1.Enabled = False //diasbles the rest
+option2.Enabled = False
+option3.Enabled = False
+option4.Enabled = False
+fifty.Enabled = False
+pss.Enabled = False
+flp.Enabled = False
+score = score + 10 //increases score
+Sleep 2000
+Me.Hide
+GQ2.Show
+End Sub
+----------------------------------------------------------------------------------------
+FOR THE WRONG OPTIONS GO TO THE CLICK() FUNCTION AND ADD THIS CODE 
+
+option2.BackColor = RGB(256, 0, 0)//highlights in red if selected
+option1.BackColor = RGB(0, 256, 0)//highlights the correct option in green(REPLACE OPTION1 WITH CORRECT OPTION)
+option1.Enabled = False//disables the rest
+option2.Enabled = False
+option3.Enabled = False
+option4.Enabled = False
+fifty.Enabled = False
+pss.Enabled = False
+flp.Enabled = False
+score = score - 10
+Sleep 2000
+Me.Hide
+GQ2.Show
+End Sub
+---------------------------------------------------------------------------------------
