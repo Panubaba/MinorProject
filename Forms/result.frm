@@ -2,23 +2,31 @@ VERSION 5.00
 Begin VB.Form result 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Result"
-   ClientHeight    =   5175
+   ClientHeight    =   4815
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   5970
    LinkTopic       =   "Form4"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   5175
+   ScaleHeight     =   4815
    ScaleWidth      =   5970
    StartUpPosition =   1  'CenterOwner
+   Begin VB.CommandButton Command2 
+      Caption         =   "Proceed"
+      Height          =   495
+      Left            =   1800
+      TabIndex        =   4
+      Top             =   3720
+      Width           =   2535
+   End
    Begin VB.CommandButton Command1 
       Caption         =   "Quit"
-      Height          =   975
-      Left            =   720
+      Height          =   495
+      Left            =   1800
       TabIndex        =   3
-      Top             =   3960
-      Width           =   3975
+      Top             =   4200
+      Width           =   2535
    End
    Begin VB.Frame Frame1 
       Caption         =   "Here's Your Result"
@@ -79,7 +87,15 @@ Private Sub Command1_Click()
 End
 End Sub
 
+Private Sub Command2_Click()
+Unload result
+topics.Show
+End Sub
+
 Private Sub Form_Load()
+If ques = 4 Then
+Command2.Visible = False
+End If
 Label1.Caption = "Hello " & nme
 Label2.Caption = "Your score is " & score
 Dim sFileText As String

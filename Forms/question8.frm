@@ -1,8 +1,8 @@
 VERSION 5.00
-Begin VB.Form GQ3 
+Begin VB.Form SQ4 
    BackColor       =   &H80000009&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Question 3"
+   Caption         =   "Question 4"
    ClientHeight    =   7920
    ClientLeft      =   45
    ClientTop       =   435
@@ -210,7 +210,7 @@ Begin VB.Form GQ3
       Width           =   6615
    End
 End
-Attribute VB_Name = "GQ3"
+Attribute VB_Name = "SQ4"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -231,7 +231,7 @@ End Sub
 Private Sub flp_Click()
 flip = 1
 Me.Hide
-FGQ1.Show
+FSQ1.Show
 End Sub
 
 Private Sub Form_Load()
@@ -239,11 +239,11 @@ If flip = 1 Then
     flp.Visible = False
 End If
 last = last + 1
-question.Caption = "What was the first ever game created ?"
-option1.Caption = "Pong"
-option2.Caption = "Pacman"
-option3.Caption = "Tennis"
-option4.Caption = "Street Fighter"
+question.Caption = "Loudness of sound depends upon of the sound wave ?"
+option1.Caption = "Frequency"
+option2.Caption = "Wavelength"
+option3.Caption = "Amplitude"
+option4.Caption = "Pitch"
 time = 60
 End Sub
 
@@ -260,7 +260,7 @@ flp.Enabled = False
 score = score - 10
 Sleep 2000
 Me.Hide
-GQ4.Show
+result.Show
 End Sub
 
 Private Sub option2_Click()
@@ -276,7 +276,7 @@ flp.Enabled = False
 score = score - 10
 Sleep 2000
 Me.Hide
-GQ4.Show
+result.Show
 End Sub
 
 Private Sub option3_Click()
@@ -291,7 +291,7 @@ flp.Enabled = False
 score = score + 10
 Sleep 2000
 Me.Hide
-GQ4.Show
+result.Show
 End Sub
 
 Private Sub option4_Click()
@@ -307,7 +307,7 @@ flp.Enabled = False
 score = score - 10
 Sleep 2000
 Me.Hide
-GQ4.Show
+result.Show
 End Sub
 
 Private Sub pss_Click()
@@ -320,7 +320,7 @@ fifty.Enabled = False
 flp.Enabled = False
 Sleep 5000
 Me.Hide
-GQ4.Show
+result.Show
 End Sub
 
 Private Sub Timer1_Timer()

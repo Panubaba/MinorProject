@@ -1,20 +1,26 @@
 VERSION 5.00
-Begin VB.Form GQ3 
-   BackColor       =   &H8000000E&
+Begin VB.Form GQ2 
+   BackColor       =   &H80000009&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Question 2"
-   ClientHeight    =   9420
+   ClientHeight    =   7920
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   6840
    LinkTopic       =   "Form3"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   21034.95
+   ScaleHeight     =   17685.45
    ScaleMode       =   0  'User
    ScaleWidth      =   10172.31
    StartUpPosition =   1  'CenterOwner
+   Begin VB.Timer Timer1 
+      Interval        =   1000
+      Left            =   5160
+      Top             =   480
+   End
    Begin VB.CommandButton Command1 
+      BackColor       =   &H80000009&
       Caption         =   "QUIT"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -27,8 +33,8 @@ Begin VB.Form GQ3
       EndProperty
       Height          =   735
       Left            =   120
-      TabIndex        =   8
-      Top             =   8640
+      TabIndex        =   0
+      Top             =   6960
       Width           =   6615
    End
    Begin VB.CommandButton pss 
@@ -43,10 +49,10 @@ Begin VB.Form GQ3
          Strikethrough   =   0   'False
       EndProperty
       Height          =   1095
-      Left            =   2400
-      TabIndex        =   7
-      Top             =   7440
-      Width           =   2055
+      Left            =   4200
+      TabIndex        =   8
+      Top             =   5640
+      Width           =   2535
    End
    Begin VB.CommandButton flp 
       Caption         =   "Flip"
@@ -60,10 +66,10 @@ Begin VB.Form GQ3
          Strikethrough   =   0   'False
       EndProperty
       Height          =   1095
-      Left            =   4800
-      TabIndex        =   6
-      Top             =   7440
-      Width           =   1935
+      Left            =   2760
+      TabIndex        =   7
+      Top             =   5640
+      Width           =   1335
    End
    Begin VB.CommandButton option4 
       BeginProperty Font 
@@ -76,11 +82,11 @@ Begin VB.Form GQ3
          Strikethrough   =   0   'False
       EndProperty
       Height          =   1095
-      Left            =   120
+      Left            =   3480
       Style           =   1  'Graphical
-      TabIndex        =   4
-      Top             =   6240
-      Width           =   6615
+      TabIndex        =   5
+      Top             =   4440
+      Width           =   3255
    End
    Begin VB.CommandButton fifty 
       Caption         =   "50-50"
@@ -95,9 +101,9 @@ Begin VB.Form GQ3
       EndProperty
       Height          =   1095
       Left            =   120
-      TabIndex        =   5
-      Top             =   7440
-      Width           =   1935
+      TabIndex        =   6
+      Top             =   5640
+      Width           =   2535
    End
    Begin VB.CommandButton option1 
       BeginProperty Font 
@@ -112,9 +118,9 @@ Begin VB.Form GQ3
       Height          =   1095
       Left            =   120
       Style           =   1  'Graphical
-      TabIndex        =   1
-      Top             =   2640
-      Width           =   6615
+      TabIndex        =   2
+      Top             =   3240
+      Width           =   3255
    End
    Begin VB.CommandButton option2 
       BeginProperty Font 
@@ -127,11 +133,11 @@ Begin VB.Form GQ3
          Strikethrough   =   0   'False
       EndProperty
       Height          =   1095
-      Left            =   120
+      Left            =   3480
       Style           =   1  'Graphical
-      TabIndex        =   2
-      Top             =   3840
-      Width           =   6615
+      TabIndex        =   3
+      Top             =   3240
+      Width           =   3255
    End
    Begin VB.CommandButton option3 
       BeginProperty Font 
@@ -146,9 +152,45 @@ Begin VB.Form GQ3
       Height          =   1095
       Left            =   120
       Style           =   1  'Graphical
-      TabIndex        =   3
-      Top             =   5040
-      Width           =   6615
+      TabIndex        =   4
+      Top             =   4440
+      Width           =   3255
+   End
+   Begin VB.Frame Frame1 
+      BackColor       =   &H80000009&
+      Caption         =   "Time Remaining"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   5415
+      Left            =   0
+      TabIndex        =   9
+      Top             =   2520
+      Width           =   6855
+      Begin VB.Label Label1 
+         Alignment       =   2  'Center
+         BackColor       =   &H80000009&
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   3120
+         TabIndex        =   10
+         Top             =   0
+         Width           =   735
+      End
    End
    Begin VB.Label question 
       BackColor       =   &H8000000E&
@@ -161,41 +203,50 @@ Begin VB.Form GQ3
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   2535
+      Height          =   2295
       Left            =   120
-      TabIndex        =   0
+      TabIndex        =   1
       Top             =   120
       Width           =   6615
    End
 End
-Attribute VB_Name = "GQ3"
+Attribute VB_Name = "GQ2"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Dim time As Integer
 Private Declare Sub Sleep Lib "kernel32.dll" (ByVal dwMilliseconds As Long)
-
 Private Sub Command1_Click()
+Me.Hide
 result.Show
 End Sub
 
 Private Sub fifty_Click()
-option1.Visible = False
-option3.Visible = False
+option2.Visible = False
+option4.Visible = False
 score = score - 5
 End Sub
 
+Private Sub flp_Click()
+flip = 1
+Me.Hide
+FGQ1.Show
+End Sub
+
 Private Sub Form_Load()
-question.Caption = "Gameworks is a suite of gaming technologies made by which company ?"
-option1.Caption = "AMD"
-option2.Caption = "Nvidia"
-option3.Caption = "Qualcomm"
-option4.Caption = "Microsoft"
+last = last + 1
+question.Caption = "Which company created the Gameworks tools ?"
+option1.Caption = "Sony"
+option2.Caption = "Microsoft"
+option3.Caption = "Nvidia"
+option4.Caption = "AMD"
+time = 60
 End Sub
 
 Private Sub option1_Click()
 option1.BackColor = RGB(256, 0, 0)
-option2.BackColor = RGB(0, 256, 0)
+option3.BackColor = RGB(0, 256, 0)
 option1.Enabled = False
 option2.Enabled = False
 option3.Enabled = False
@@ -210,23 +261,8 @@ GQ3.Show
 End Sub
 
 Private Sub option2_Click()
-option2.BackColor = RGB(0, 256, 0)
-option1.Enabled = False
-option2.Enabled = False
-option3.Enabled = False
-option4.Enabled = False
-fifty.Enabled = False
-pss.Enabled = False
-flp.Enabled = False
-score = score + 10
-Sleep 2000
-Me.Hide
-GQ3.Show
-End Sub
-
-Private Sub option3_Click()
-option3.BackColor = RGB(256, 0, 0)
-option2.BackColor = RGB(0, 256, 0)
+option2.BackColor = RGB(256, 0, 0)
+option3.BackColor = RGB(0, 256, 0)
 option1.Enabled = False
 option2.Enabled = False
 option3.Enabled = False
@@ -240,9 +276,24 @@ Me.Hide
 GQ3.Show
 End Sub
 
+Private Sub option3_Click()
+option3.BackColor = RGB(0, 256, 0)
+option1.Enabled = False
+option2.Enabled = False
+option3.Enabled = False
+option4.Enabled = False
+fifty.Enabled = False
+pss.Enabled = False
+flp.Enabled = False
+score = score + 10
+Sleep 2000
+Me.Hide
+GQ3.Show
+End Sub
+
 Private Sub option4_Click()
+option1.BackColor = RGB(0, 256, 0)
 option4.BackColor = RGB(256, 0, 0)
-option2.BackColor = RGB(0, 256, 0)
 option1.Enabled = False
 option2.Enabled = False
 option3.Enabled = False
@@ -257,16 +308,31 @@ GQ3.Show
 End Sub
 
 Private Sub pss_Click()
-option2.BackColor = RGB(0, 256, 0)
+option1.BackColor = RGB(0, 256, 0)
 option1.Enabled = False
 option2.Enabled = False
 option3.Enabled = False
 option4.Enabled = False
 fifty.Enabled = False
 flp.Enabled = False
-pss.Enabled = False
 Sleep 5000
 Me.Hide
-result.Show
+GQ3.Show
 End Sub
 
+Private Sub Timer1_Timer()
+Label1.Caption = time
+time = time - 1
+If time = -1 Then
+    MsgBox "Game Over !", , "Time's Up!"
+    option1.BackColor = RGB(0, 256, 0)
+    Timer1.Enabled = False
+    option1.Enabled = False
+    option2.Enabled = False
+    option3.Enabled = False
+    option4.Enabled = False
+    fifty.Enabled = False
+    pss.Enabled = False
+    flp.Enabled = False
+End If
+End Sub

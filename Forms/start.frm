@@ -101,9 +101,10 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub Command1_Click()
 score = 0
+ques = 0
 nme = Nm.Text
 If Nm.Text = "" Then
-MsgBox "Enter Your Name First !"
+MsgBox "Enter Your Name First !", , "ERROR !"
 Else
 topics.Show
 Me.Hide

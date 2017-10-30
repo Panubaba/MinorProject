@@ -93,18 +93,43 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Command1_Click()
+ques = ques + 1
+Command1.Enabled = False
+IGQ1.Show
+Me.Hide
+End Sub
+
+Private Sub Command2_Click()
+ques = ques + 1
+Command2.Enabled = False
+gk1.Show
+Me.Hide
+End Sub
+
+Private Sub Command3_Click()
+ques = ques + 1
+Command3.Enabled = False
+SQ1.Show
+Me.Hide
+End Sub
+
 Private Sub Command4_Click()
+ques = ques + 1
+Command4.Enabled = False
 GQ1.Show
 Me.Hide
 End Sub
 
 Private Sub Command6_Click()
-Me.Hide
 welcome.Show
+Me.Hide
 End Sub
 
 Private Sub Form_Load()
 Label1.Caption = "Welcome " & nme & Chr(13) & Chr(13) & "Please select a topic"
+flip = 0
+last = 0
 End Sub
 
 Private Sub rule_Click()

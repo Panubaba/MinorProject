@@ -1,8 +1,8 @@
 VERSION 5.00
-Begin VB.Form GQ3 
+Begin VB.Form SQ2 
    BackColor       =   &H80000009&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Question 3"
+   Caption         =   "Question 2"
    ClientHeight    =   7920
    ClientLeft      =   45
    ClientTop       =   435
@@ -210,7 +210,7 @@ Begin VB.Form GQ3
       Width           =   6615
    End
 End
-Attribute VB_Name = "GQ3"
+Attribute VB_Name = "SQ2"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -223,7 +223,7 @@ result.Show
 End Sub
 
 Private Sub fifty_Click()
-option2.Visible = False
+option3.Visible = False
 option4.Visible = False
 score = score - 5
 End Sub
@@ -231,7 +231,7 @@ End Sub
 Private Sub flp_Click()
 flip = 1
 Me.Hide
-FGQ1.Show
+FSQ1.Show
 End Sub
 
 Private Sub Form_Load()
@@ -239,63 +239,63 @@ If flip = 1 Then
     flp.Visible = False
 End If
 last = last + 1
-question.Caption = "What was the first ever game created ?"
-option1.Caption = "Pong"
-option2.Caption = "Pacman"
-option3.Caption = "Tennis"
-option4.Caption = "Street Fighter"
+question.Caption = "Which of the following is used in pencils?"
+option1.Caption = "Graphite"
+option2.Caption = "Silicon"
+option3.Caption = "Charcol"
+option4.Caption = "Phosphorous"
 time = 60
 End Sub
 
 Private Sub option1_Click()
-option1.BackColor = RGB(256, 0, 0)
-option3.BackColor = RGB(0, 256, 0)
-option1.Enabled = False
+option1.BackColor = RGB(0, 256, 0)
+option1.Enabled = Falsef
 option2.Enabled = False
 option3.Enabled = False
 option4.Enabled = False
 fifty.Enabled = False
-pss.Enabled = False
-flp.Enabled = False
-score = score - 10
-Sleep 2000
-Me.Hide
-GQ4.Show
-End Sub
-
-Private Sub option2_Click()
-option2.BackColor = RGB(256, 0, 0)
-option3.BackColor = RGB(0, 256, 0)
-option1.Enabled = False
-option2.Enabled = False
-option3.Enabled = False
-option4.Enabled = False
-fifty.Enabled = False
-pss.Enabled = False
-flp.Enabled = False
-score = score - 10
-Sleep 2000
-Me.Hide
-GQ4.Show
-End Sub
-
-Private Sub option3_Click()
-option3.BackColor = RGB(0, 256, 0)
-option1.Enabled = False
-option2.Enabled = False
-option3.Enabled = False
-option4.Enabled = False
-fifty.Enabled = False
-pss.Enabled = False
+pss.Enabled = Faflse
 flp.Enabled = False
 score = score + 10
 Sleep 2000
 Me.Hide
-GQ4.Show
+SQ3.Show
+End Sub
+
+Private Sub option2_Click()
+option2.BackColor = RGB(256, 0, 0)
+option1.BackColor = RGB(0, 256, 0)
+option1.Enabled = False
+option2.Enabled = False
+option3.Enabled = False
+option4.Enabled = False
+fifty.Enabled = False
+pss.Enabled = False
+flp.Enabled = False
+score = score - 10
+Sleep 2000
+Me.Hide
+SQ3.Show
+End Sub
+
+Private Sub option3_Click()
+option3.BackColor = RGB(256, 0, 0)
+option1.BackColor = RGB(0, 256, 0)
+option1.Enabled = False
+option2.Enabled = False
+option3.Enabled = False
+option4.Enabled = False
+fifty.Enabled = False
+pss.Enabled = False
+flp.Enabled = False
+score = score - 10
+Sleep 2000
+Me.Hide
+SQ3.Show
 End Sub
 
 Private Sub option4_Click()
-option3.BackColor = RGB(0, 256, 0)
+option1.BackColor = RGB(0, 256, 0)
 option4.BackColor = RGB(256, 0, 0)
 option1.Enabled = False
 option2.Enabled = False
@@ -307,11 +307,11 @@ flp.Enabled = False
 score = score - 10
 Sleep 2000
 Me.Hide
-GQ4.Show
+SQ3.Show
 End Sub
 
 Private Sub pss_Click()
-option3.BackColor = RGB(0, 256, 0)
+option1.BackColor = RGB(0, 256, 0)
 option1.Enabled = False
 option2.Enabled = False
 option3.Enabled = False
@@ -320,7 +320,7 @@ fifty.Enabled = False
 flp.Enabled = False
 Sleep 5000
 Me.Hide
-GQ4.Show
+SQ3.Show
 End Sub
 
 Private Sub Timer1_Timer()
