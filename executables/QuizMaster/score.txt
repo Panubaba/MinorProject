@@ -1,2 +1,4 @@
-Name - Test
-Score - 0
+Name Suvoparno
+Score 20
+Name Suvoparno
+Score -25
